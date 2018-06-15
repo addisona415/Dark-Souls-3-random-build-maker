@@ -92,6 +92,8 @@ int main (void){
 	fclose(han);
 	fclose(leg);
 	fclose(rin);
+
+	system("PAUSE");
     return 0;
 }
 
