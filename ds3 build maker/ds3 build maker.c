@@ -8,7 +8,7 @@
 
 int main (void){
 
-	FILE *wep, *off, *hel, *che, *han, *leg, *rin;
+	FILE *wep, *off, *hel, *che, *han, *leg, *rin, *fou;
     int main_id, off_id, i, helm_id, chest_id, hand_id, leg_id, r1, r2, r3, r4, rr;
 	char mainh[185][30], offh[97][30], helm[79][30], chest[85][30], hands[73][30], legs[77][30], ring[71][35], reroll;
     srand((unsigned) time (NULL));
@@ -20,7 +20,8 @@ int main (void){
 	han = fopen("hands.txt", "r");
 	leg = fopen("legs.txt", "r");
 	rin = fopen("ring.txt", "r");
-
+	fou = fopen("build.txt", "w");
+	
 	rr = 1;
 
 	for(i = 0;i<185;i++){
@@ -118,6 +119,8 @@ int main (void){
     }while(rr == 1);
 
     printf("This is what you rolled, now deal with it, fuck you.\n - Jarrod 2018\n");
+	
+	fprintf(fou, "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n", "Your build: ", mainh[main_id], offh[off_id], helm[helm_id], chest[chest_id], hands[hand_id], legs[leg_id], ring[r1], ring[r2], ring[r3], ring[r4]);
 
 	fclose(wep);
 	fclose(off);
@@ -126,6 +129,7 @@ int main (void){
 	fclose(han);
 	fclose(leg);
 	fclose(rin);
+	fclose(fou);
 
 	system("PAUSE");
     return 0;
